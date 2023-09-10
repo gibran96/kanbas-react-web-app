@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grade</title>
+</head>
+<body>
+<table width="100%">
+    <tbody>
+    <tr valign="baseline">
+        <td>
+            <ul>
+                <li><a href="#">Account</a></li>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Calendar</a></li>
+                <li><a href="#">Inbox</a></li>
+                <li><a href="#">History</a></li>
+                <li><a href="#">Studio</a></li>
+                <li><a href="#">Commons</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Modules</a></li>
+                <li><a href="#">Piazza</a></li>
+                <li><a href="#">Zoom Meetings</a></li>
+                <li><a href="#">Assignments</a></li>
+                <li><a href="#">Quizzes</a></li>
+                <li><a href="#">Grades</a></li>
+                <li><a href="#">People</a></li>
+                <li><a href="#">Panopto Video</a></li>
+                <li><a href="#">Discussions</a></li>
+                <li><a href="#">Announcements</a></li>
+                <li><a href="#">Pages</a></li>
+                <li><a href="#">Files</a></li>
+                <li><a href="#">Rubrics</a></li>
+                <li><a href="#">Outcomes</a></li>
+                <li><a href="#">Collaborations</a></li>
+                <li><a href="#">Syllabus</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </td>
+        <td>
+            <select id="grade-book-selector">
+                <option value="GRADEBOOK">Gradebook</option>
+            </select>
+            <button type="button">Import</button>
+            <select id="export-selector">
+                <option value="EXPORT">Export</option>
+            </select>
+            <button type="button">Configure</button>
+            <h3>Student Names</h3>
+            <input type="text" id="student-names"/>
+            <h3>Assignment Names</h3>
+            <input type="text" id="assignment-names"/><br/><br/>
+            <button type="button">Apply Filters</button><br/><br/>
+            <table border="1" width="100%">
+                <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>REACT OUT OF 100</th>
+                    <th>BOOTSTRAP OUT OF 100</th>
+                    <th>REDUX OUT OF 100</th>
+                    <th>MONGO OUT OF 100</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Paul McCartney</td>
+                    <td>98</td>
+                    <td>76</td>
+                    <td>87</td>
+                    <td><input  type="number" id="paul-react-grade" value="84"/></td>
+                </tr>
+                <tr>
+                    <td>John Lennon</td>
+                    <td>85</td>
+                    <td>90</td>
+                    <td><input  type="number" id="john-mongo-grade" value="79"/></td>
+                    <td>83</td>
+                </tr>
+                <tr>
+                    <td>George Harrison</td>
+                    <td>78</td>
+                    <td><input  type="number" id="george-boot-grade" value="79"/></td>
+                    <td>85</td>
+                    <td>93</td>
+                </tr>
+                <tr>
+                    <td>Ringo Starr</td>
+                    <td><input  type="number" id="ringo-react-grade" value="79"/></td>
+                    <td>96</td>
+                    <td>77</td>
+                    <td>82</td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
