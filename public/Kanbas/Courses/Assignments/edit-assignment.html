@@ -1,0 +1,136 @@
+<table width="75%">
+    <tbody>
+    <tr valign="top">
+        <td>
+            <ul>
+                <li><a href="/Kanbas/Account/Profile/profile.html">Account</a></li>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="/Kanbas/Courses/Home/home.html">Courses</a></li>
+                <li><a href="#">Calendar</a></li>
+                <li><a href="#">Inbox</a></li>
+                <li><a href="#">History</a></li>
+                <li><a href="#">Studio</a></li>
+                <li><a href="#">Commons</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li><a href="/Kanbas/Courses/Home/home.html">Home</a></li>
+                <li><a href="#">Modules</a></li>
+                <li><a href="#">Piazza</a></li>
+                <li><a href="#">Zoom Meetings</a></li>
+                <li><a href="/Kanbas/Courses/Assignments/assignments.html">Assignments</a></li>
+                <li><a href="#">Quizzes</a></li>
+                <li><a href="/Kanbas/Courses/Grades/grade.html">Grades</a></li>
+                <li><a href="#">People</a></li>
+                <li><a href="#">Panopto Video</a></li>
+                <li><a href="#">Discussions</a></li>
+                <li><a href="#">Announcements</a></li>
+                <li><a href="#">Pages</a></li>
+                <li><a href="#">Files</a></li>
+                <li><a href="#">Rubrics</a></li>
+                <li><a href="#">Outcomes</a></li>
+                <li><a href="#">Collaborations</a></li>
+                <li><a href="#">Syllabus</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </td>
+        <td>
+            <select>
+                <option>Speed grader</option>
+            </select>
+            <hr/>
+
+            <label for="assignmentName">Assignment Name</label><br>
+            <input type="text" id="assignmentName" value="A1 - ENV + HTML">
+            <br><br>
+
+            <textarea cols="40" rows="5">This is the assignment description</textarea>
+            <br><br>
+
+            <label for="points">Points</label><br/>
+            <input type="number" id="points" value="100"/>
+            <br><br>
+
+            <label for="assignmentGroup">Assignment Group</label><br/>
+            <select id="assignmentGroup">
+                <option>ASSIGNMENTS</option>
+            </select>
+            <br><br>
+
+            <label for="displayGrade">Display Grade as</label><br/>
+            <select id="displayGrade">
+                <option>Percentage</option>
+            </select>
+            <br><br>
+
+            <label for="submissionType">Submission type</label><br/>
+            <select id="submissionType">
+                <option>Online</option>
+            </select>
+            <br><br>
+
+            <label>Online Entry Options</label><br/>
+            <input type="checkbox" value="TEXT" name="check-text" id="checkbox-text"/>
+            <label for="checkbox-text">Text Entry</label><br/>
+            <input type="checkbox" value="WEBSITE" name="check-web" id="checkbox-web"/>
+            <label for="checkbox-web">Website URL</label><br/>
+            <input type="checkbox" value="MEDIA" name="check-media" id="checkbox-media"/>
+            <label for="checkbox-media">Media Recordings</label><br/>
+            <input type="checkbox" value="ANNOT" name="check-annot" id="checkbox-annot"/>
+            <label for="checkbox-annot">Student Annotations</label><br/>
+            <input type="checkbox" value="UPLOAD" name="check-upload" id="checkbox-upload"/>
+            <label for="checkbox-text">File Uploads</label><br/><br/>
+
+            <label for="submissionAttempts">Submission Attempts</label><br/>
+            <select id="submissionAttempts">
+                <option>Unlimited</option>
+            </select>
+            <br/><br/>
+
+            <label for="plagiarismReview">Plagiarism Review</label><br/>
+            <select id="plagiarismReview">
+                <option>None</option>
+            </select>
+            <br/><br/>
+
+            <label>Group Assignments</label><br/>
+            <input type="checkbox" value="GROUP" name="check-group" id="checkbox-group"/>
+            <label for="checkbox-group">This is a group assignment</label><br/><br/>
+
+            <label>Peer Reviews</label><br/>
+            <input type="checkbox" value="PEER-REVIEW" name="check-group" id="checkbox-peer"/>
+            <label for="checkbox-peer">Require Peer Reviews</label><br/><br/>
+
+            <label>Assign</label><br/>
+            <label for="assign-to">Assign to</label><br/>
+            <input type="text" id="assign-to" value="Everyone"/>
+            <br/><br/>
+
+            <label for="due-date">Due</label><br/>
+            <input type="date" value="2023-09-18" id="due-date"/>
+            <br/><br/>
+
+            <label for="avail-date">Available from</label><br/>
+            <input type="date" value="2023-09-08" id="avail-date"/>
+            <br/><br/>
+
+            <label for="until-date">Until</label><br/>
+            <input type="date" value="2023-09-18" id="until-date"/>
+            <br/><br/>
+
+            <button type="button" id="cancel-btn"
+                    onclick="window.location.href='/Kanbas/Courses/Assignments/assignments.html'">
+                Cancel
+            </button>
+
+            <button type="button" id="save-btn"
+                    onclick="window.location.href='/Kanbas/Courses/Assignments/assignments.html'">
+                Save
+            </button>
+
+        </td>
+    </tr>
+    </tbody>
+</table>
