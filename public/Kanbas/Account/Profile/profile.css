@@ -1,0 +1,60 @@
+.container {
+    min-width: 100%;
+}
+
+.wd-kanbas-navigation.list-group {
+    border-radius: 0;
+}
+
+.wd-kanbas-navigation .list-group-item {
+    color: white;
+    background-color: black;
+    border: none;
+}
+
+.wd-kanbas-navigation .list-group-item.active {
+    color: #b52828;
+    background-color: white;
+}
+
+.wd-color-red {
+    color: #b52828;
+}
+
+.wd-bg-color-black {
+    background-color: black;
+}
+
+.wd-align-centre {
+    text-align: center;
+}
+
+.wd-account-navigation.list-group {
+    border-radius: 0;
+}
+
+.wd-account-navigation .list-group-item {
+    border: none;
+    color: #b52828;
+    padding-left: 8px;
+}
+
+.wd-account-navigation .list-group-item.active {
+    color: black;
+    border-left: 2px solid black;
+    background-color: white;
+}
+
+.wd-account-navigation .list-group-item:hover {
+    background-color: white;
+    text-decoration: underline;
+}
+
+.wd-account-navigation .list-group-item:focus {
+    background-color: white;
+}
+
+.wd-nu-logo {
+    width: 70px;
+    height: 70px;
+}
