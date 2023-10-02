@@ -1,89 +1,209 @@
-<table width="75%">
-    <tbody>
-    <tr valign="top">
-        <td>
-            <ul>
-                <li><a href="/Kanbas/Account/Profile/profile.html">Account</a></li>
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="/Kanbas/Courses/Home/home.html">Courses</a></li>
-                <li><a href="#">Calendar</a></li>
-                <li><a href="#">Inbox</a></li>
-                <li><a href="#">History</a></li>
-                <li><a href="#">Studio</a></li>
-                <li><a href="#">Commons</a></li>
-                <li><a href="#">Help</a></li>
-            </ul>
-        </td>
-        <td>
-            <ul>
-                <li><a href="#">Notifications</a></li>
-                <li><a href="/Kanbas/Account/Profile/profile.html">Profiles</a></li>
-                <li><a href="#">Files</a></li>
-                <li><a href="/Kanbas/Courses/Settings/settings.html">Settings</a></li>
-                <li><a href="#">ePortfolios</a></li>
-                <li><a href="#">Shared Content</a></li>
-                <li><a href="#">The Hub</a></li>
-                <li><a href="#">Quickly Course Tools</a></li>
-                <li><a href="#">Global Announcements</a></li>
-            </ul>
-        </td>
-        <td>
-            <h2>Gibran Myageri</h2>
-            <label for="name">Name:*</label>
-            <input type="text" id="name" value="Gibran Myageri"/>
-
-            <label for="pronouns">Pronouns:</label>
-            <select id="pronouns">
-                <option>None</option>
-                <option>He/Him</option>
-                <option>She/Her</option>
-            </select>
-            <br/><br/>
-
-            <label for="title">Title:</label>
-            <input type="text" id="title"/>
-            <br/><br/>
-
-            <h3>Contact</h3>
-            <p>No registered services, you can add some on the <a href="#">settings</a> page.</p>
-
-            <h3>Biography</h3>
-            <p>Student, Full stack developer, Soccer and Music enthusiast.</p>
-            <textarea cols="40"
-                      rows="3">Student, Full stack developer, Soccer and Music enthusiast.</textarea>
-
-            <h3>Links</h3>
-            <ul>
-                <li><a href="#">YouTube &#x2197; - Links to an external site</a></li>
-            </ul>
-            <br/>
-            <div style="display: inline-block">
-                <label for="title-text"
-                       style="display: block; text-align: center; line-height: 0; font-weight: bold">Title</label><br/>
-                <input type="text" value="YouTube" id="title-text">
+<html lang="en">
+<head>
+  <title>Profile</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.css"
+        rel="stylesheet"/>
+  <link href="profile.css"
+        rel="stylesheet"/>
+</head>
+<body>
+<div class="container w-100">
+  <div class="row h-100">
+    <div class="col-1 d-none d-md-block px-0 wd-bg-color-black wd-col-min">
+      <div class="list-group wd-kanbas-navigation h-100">
+        <a href="#"
+           class="list-group-item list-group-item-action wd-align-centre">
+          <img src="../../../images/nu-logo.png" alt="NU Logo" class="wd-nu-logo">
+        </a>
+        <a href="/Kanbas/Account/Profile/profile.html"
+           class="list-group-item list-group-item-action wd-align-centre active">
+          <i class="fa-regular fa-circle-user fa-2x  wd-color-red"></i><br/>
+          <span>Account</span>
+        </a>
+        <a href="/Kanbas/Dashboard/dashboard.html"
+           class="list-group-item list-group-item-action wd-align-centre">
+          <i class="fa-solid fa-gauge-high fa-2x wd-color-red"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="/Kanbas/Courses/Home/home.html"
+           class="list-group-item list-group-item-action wd-align-centre">
+          <i class="fa-solid fa-book fa-2x wd-color-red"></i><br/>
+          <span>Courses</span>
+        </a>
+        <a href="#"
+           class="list-group-item list-group-item-action wd-align-centre">
+          <i class="fa-solid fa-calendar-days fa-2x  wd-color-red"></i><br/>
+          <span>Calendar</span>
+        </a>
+        <a href="#"
+           class="list-group-item list-group-item-action wd-align-centre">
+          <i class="fa-solid fa-inbox fa-2x  wd-color-red"></i><br/>
+          <span>Inbox</span>
+        </a>
+        <a href="#"
+           class="list-group-item list-group-item-action wd-align-centre">
+          <i class="fa-solid fa-clock-rotate-left fa-2x wd-color-red"></i><br/>
+          <span>History</span>
+        </a>
+        <a href="#"
+           class="list-group-item list-group-item-action wd-align-centre">
+          <i class="fa-brands fa-youtube fa-2x wd-color-red"></i><br/>
+          <span>Studio</span>
+        </a>
+        <a href="#"
+           class="list-group-item list-group-item-action wd-align-centre">
+          <i class="fa-solid fa-right-from-bracket fa-2x wd-color-red"></i>
+          <span>Commons</span>
+        </a>
+        <a href="#"
+           class="list-group-item list-group-item-action wd-align-centre">
+          <i class="fa-regular fa-circle-question fa-2x wd-color-red"></i><br/>
+          <span>Help</span>
+        </a>
+      </div>
+    </div>
+    <div class="col-12 col-md-11 px-0 px-md-4">
+      <div class="row">
+        <div class="col d-none d-md-block">
+          <div class="row wd-row-width">
+            <div class="col-1 align-self-center">
+              <i class="fa-solid fa-bars fa-2x wd-color-red"></i>
             </div>
-            <p style="display: inline-block">&#8594;</p>
-            <div style="display: inline-block">
-                <label for="url"
-                       style="display: block; text-align: center; line-height: 0; font-weight: bold">URL
-                </label><br/>
-                <input type="text" value="https://www.youtube.com" id="url">
+            <div class="col-11 align-self-center wd-profile-font">
+              Gibran Myageri's Profile
             </div>
-            <p style="display: inline-block"><a href="#">Remove</a></p>
-            <br/>
+          </div>
+          <div class="wd-horiz-line"></div>
+        </div>
+        <div class="d-block d-md-none">
+          <nav class="navbar navbar-expand-lg navbar-dark wd-bg-color-black">
+            <div class="container-fluid">
+              <i class="fa-solid fa-bars fa-2x wd-color-red float-start wd-color-white"></i>
+              <div class="text-centre wd-color-white">
+                Gibran Myageri's Profile
+              </div>
+              <i class="fa-solid fa-angle-down wd-color-white"></i>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div class="row px-4 px-md-0 pt-4 h-100">
+        <div class="col-md-2 h-100 d-none d-md-block">
+          <div class="list-group wd-account-navigation float-none">
+            <a href="#" class="list-group-item list-group-item-action">Notifications</a>
+            <a href="#" class="list-group-item list-group-item-action active">Profile</a>
+            <a href="#" class="list-group-item list-group-item-action">Files</a>
+            <a href="#" class="list-group-item list-group-item-action">Settings</a>
+            <a href="#" class="list-group-item list-group-item-action">ePortfolios</a>
+            <a href="#" class="list-group-item list-group-item-action">Shared Content</a>
+            <a href="#" class="list-group-item list-group-item-action">The Hub</a>
+            <a href="#" class="list-group-item list-group-item-action">Quickly Course Tools</a>
+            <a href="#" class="list-group-item list-group-item-action">Global Announcements</a>
+          </div>
+        </div>
+        <div class="col-sm-8 col-md-6 col-lg-7 pb-4">
+          <div class="row h-100">
+            <div class="col-12 col-lg-3">
+              <i class="fa-regular fa-circle-user fa-8x"></i>
+            </div>
+            <div class="col-12 col-lg-9">
+              <div class="pb-2 pt-sm-2 pt-lg-0">
+                <label for="name" class="form-label mb-0">Name*:</label>
+                <input id="name" type="text" class="form-control mb-2" value="Gibran Myageri"/>
 
-            <button>Add another link</button>
-            <br/>
-            <button>Cancel</button>
-            <button onclick="window.location.href='/Kanbas/Account/Profile/profile.html'">Save
-                profile
+                <label for="pronouns" class="form-label mb-0">Pronouns</label>
+                <select id="pronouns" class="form-select mb-2">
+                  <option>None</option>
+                  <option>He/Him</option>
+                  <option>She/Her</option>
+                </select>
+
+                <label for="title" class="form-label mb-0">Title:</label>
+                <input id="title" type="text" class="form-control"/>
+              </div>
+
+              <div class="wd-name-font pt-4">
+                <h3>Contact</h3>
+              </div>
+              <p>No registered services, you can add some on the <a
+                  href="/Kanbas/Courses/Settings/settings.html"
+                  class="wd-text-decoration wd-color-red">settings</a>
+                page.</p>
+
+              <div class="wd-name-font pt-4">
+                <h3>Biography</h3>
+              </div>
+              <textarea class="form-control" rows="5" id="biography">Student, Full stack developer, Soccer and Music enthusiast.</textarea>
+
+              <div class="wd-name-font pt-4">
+                <h3>Links</h3>
+              </div>
+
+              <div class="row">
+                <div class="col-5 text-center">
+                  <label for="title-text" class="form-label">Title</label>
+                </div>
+                <div class="col-1"></div>
+                <div class="col-5 text-center">
+                  <label for="url" class="form-label">URL</label>
+                </div>
+                <div class="col-1"></div>
+              </div>
+              <div class="row">
+                <div class="col-5 pe-0">
+                  <input type="text" value="YouTube" id="title-text" class="form-control">
+                </div>
+                <div class="col-1 align-self-center text-center px-0"><i
+                    class="fa-solid fa-arrow-right"></i></div>
+                <div class="col-5 ps-0">
+                  <input type="text" class="form-control" value="https://www.youtube.com"
+                         id="url">
+                </div>
+                <div class="col-1 ps-0 align-self-center"><i
+                    class="fa-solid fa-xmark wd-color-red"></i>
+                </div>
+              </div>
+              <div class="row mt-1">
+                <div class="col-5 pe-0">
+                  <input type="text" id="title-text-2" class="form-control">
+                </div>
+                <div class="col-1 align-self-center text-center px-0"><i
+                    class="fa-solid fa-arrow-right"></i></div>
+                <div class="col-5 ps-0">
+                  <input type="text" class="form-control"
+                         id="url-2">
+                </div>
+                <div class="col-1 ps-0 align-self-center"><i
+                    class="fa-solid fa-xmark wd-color-red"></i>
+                </div>
+              </div>
+              <button type="button" class="wd-edit-btn mt-1">Add another link</button>
+              <div class="wd-horiz-line mt-4"></div>
+
+              <div class="mt-4 float-end">
+                <button type="button" class="wd-edit-btn"
+                        onclick="window.location.href='/Kanbas/Account/Profile/profile.html'">Cancel
+                </button>
+                <button type="button" class="btn btn-danger"
+                        onclick="window.location.href='/Kanbas/Account/Profile/profile.html'">Save
+                  profile
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-md-3 col-lg-3">
+          <div class="float-end">
+            <button class="wd-edit-btn" type="button"
+                    onclick="window.location.href='/Kanbas/Account/Profile/profile.html'"><i
+                class="fa-solid fa-pencil fa-rotate-270"></i> Cancel editing
             </button>
-            <br/>
-            <button>Edit profile</button>
-            <button onclick="window.location.href='/Kanbas/Account/Profile/profile.html'">Cancel
-                editing
-            </button>
-        </td>
-    </tr>
-    </tbody>
-</table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>

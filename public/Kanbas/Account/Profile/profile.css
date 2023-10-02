@@ -1,15 +1,19 @@
 .container {
+    min-height: 100%;
     min-width: 100%;
 }
 
 .wd-kanbas-navigation.list-group {
     border-radius: 0;
+    font-family: "Lato Extended","Lato","Helvetica", serif;
+    font-size: 14px;
 }
 
 .wd-kanbas-navigation .list-group-item {
     color: white;
     background-color: black;
     border: none;
+    padding: 10px 0 10px 0;
 }
 
 .wd-kanbas-navigation .list-group-item.active {
@@ -57,4 +61,48 @@
 .wd-nu-logo {
     width: 70px;
     height: 70px;
+}
+
+.wd-col-min {
+    max-width: 85px;
+    min-height: 100%;
+}
+
+.wd-horiz-line {
+    border-bottom: 1px solid #c7cdd1;
+}
+
+.wd-row-width {
+    height: 70px;
+}
+
+.wd-profile-font {
+    font-size: 18px;
+    font-family: "Lato Extended", "Lato", "Helvetica", serif;
+    color: #2D3B45;
+}
+
+.wd-name-font {
+    font-family: "Lato Extended","Lato","Helvetica", serif;
+    color: #2D3B45;
+}
+
+.wd-text-decoration {
+    text-decoration: none;
+}
+
+.wd-edit-btn {
+    border-radius: 3px;
+    background: #f5f5f5;
+    color: #2D3B45;
+    border: 1px solid #c7cdd1;
+    padding: 6px 6px 6px 6px;
+}
+
+.wd-color-white {
+    color: white;
+}
+
+.wd-color-black {
+    color: black;
 }
