@@ -1,0 +1,24 @@
+.wd-account-navigation.list-group {
+  border-radius: 0;
+}
+
+.wd-account-navigation .list-group-item {
+  border: none;
+  color: #b52828;
+  padding-left: 8px;
+}
+
+.wd-account-navigation .list-group-item.active {
+  color: black;
+  border-left: 2px solid black;
+  background-color: white;
+}
+
+.wd-account-navigation .list-group-item:hover {
+  background-color: white;
+  text-decoration: underline;
+}
+
+.wd-account-navigation .list-group-item:focus {
+  background-color: white;
+}

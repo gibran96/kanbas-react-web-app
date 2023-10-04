@@ -106,3 +106,7 @@
 .wd-color-black {
     color: black;
 }
+
+.wd-top-nav {
+    min-height: 50px;
+}

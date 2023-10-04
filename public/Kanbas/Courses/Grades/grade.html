@@ -85,18 +85,30 @@
         <div class="d-block d-md-none">
           <nav class="navbar navbar-expand-lg navbar-dark wd-bg-color-black">
             <div class="container-fluid">
-              <i class="fa-solid fa-bars fa-2x wd-color-red float-start wd-color-white"></i>
+              <a href="/Kanbas/KanbasNavigation/kanbas-navigation.html">
+                <i class="fa-solid fa-bars fa-2x wd-color-red float-start wd-color-white"></i>
+              </a>
               <div class="text-centre wd-color-white">
                 CS5610.12631.202410
                 <p>Grades</p>
               </div>
-              <i class="fa-solid fa-angle-down wd-color-white"></i>
+              <div class="float-end">
+                <i class="fa-solid fa-glasses wd-color-red"></i>
+                <a href="/Kanbas/Courses/CourseNavigation/course-navigation.html">
+                  <i class="fa-solid fa-angle-down wd-color-white"></i>
+                </a>
+              </div>
             </div>
           </nav>
         </div>
       </div>
       <div class="row px-4 px-md-0 pt-4">
         <div class="col-md-2 h-100 d-none d-md-block">
+          <div class="row">
+            <div class="col">
+              <p class="wd-course-id">202410_1 Fall Semester</p>
+            </div>
+          </div>
           <div class="list-group wd-account-navigation float-none">
             <a href="/Kanbas/Courses/Home/home.html"
                class="list-group-item list-group-item-action">Home</a>
@@ -126,7 +138,9 @@
           <div class="row">
             <div class="col px-0">
               <div class="float-end">
-                <button class="btn btn-light rounded-1"><i class="fa-solid fa-file-import"></i> Import</button>
+                <button class="btn btn-light rounded-1"><i class="fa-solid fa-file-import"></i>
+                  Import
+                </button>
                 <div class="dropdown wd-publish-dropdown">
                   <button class="btn btn-light rounded-1 dropdown-toggle" type="button"
                           data-bs-toggle="dropdown" aria-expanded="false">
@@ -144,6 +158,137 @@
           </div>
           <div class="row">
             <div class="col-6">
+              <label for="student-names" class="fw-bold mb-1">Student Names</label>
+              <div class="input-group">
+                <button class="btn border-end-0 wd-search-border"><i
+                    class="fa-solid fa-magnifying-glass"></i></button>
+                <input id="student-names" type="text" placeholder="Search Students"
+                       class="form-control border-start-0 border-end-0"/>
+                <button class="btn border-start-0 wd-search-border"><i
+                    class="fa-solid fa-chevron-down"></i></button>
+              </div>
+            </div>
+            <div class="col-6">
+              <label for="assignment-names" class="fw-bold mb-1">Assignment Names</label>
+              <div class="input-group">
+                <button class="btn border-end-0 wd-search-border"><i
+                    class="fa-solid fa-magnifying-glass"></i></button>
+                <input id="assignment-names" type="text" placeholder="Search Assignments"
+                       class="form-control border-start-0 border-end-0"/>
+                <button class="btn border-start-0 wd-search-border"><i
+                    class="fa-solid fa-chevron-down"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col">
+              <button class="btn btn-light"><i class="fa-solid fa-filter"></i> Apply Filters
+              </button>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col">
+              <table class="table table-striped table-bordered table-responsive">
+                <thead>
+                <tr>
+                  <th scope="col" class="text-center align-middle">Student Name</th>
+                  <th scope="col" class="text-center align-middle">
+                    A1 SETUP
+                    <p class="wd-todo-subtext mb-0"> Out of 100</p>
+                  </th>
+                  <th scope="col" class="text-center align-middle">
+                    A2 HTML
+                    <p class="wd-todo-subtext mb-0"> Out of 100</p>
+                  </th>
+                  <th scope="col" class="text-center align-middle">
+                    A3 CSS
+                    <p class="wd-todo-subtext mb-0"> Out of 100</p>
+                  </th>
+                  <th scope="col" class="text-center align-middle">
+                    A4 BOOTSTRAP
+                    <p class="wd-todo-subtext mb-0"> Out of 100</p>
+                  </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>Paul McCartney</td>
+                  <td class="p-0">
+                    <input type="number" id="paul-a1-grade" class="form-control text-center"
+                           value="76"/>
+                  </td>
+                  <td class="p-0">
+                    <input type="number" id="paul-a2-grade" class="form-control text-center"
+                           value="81"/>
+                  </td>
+                  <td class="p-0">
+                    <input type="number" id="paul-a3-grade" class="form-control text-center"
+                           value="71"/>
+                  </td>
+                  <td class="p-0">
+                    <input type="number" id="paul-a4-grade" class="form-control text-center"
+                           value="84"/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>John Lennon</td>
+                  <td class="p-0">
+                    <input type="number" id="john-a1-grade" class="form-control text-center"
+                           value="76"/>
+                  </td>
+                  <td class="p-0">
+                    <input type="number" id="john-a2-grade" class="form-control text-center"
+                           value="81"/>
+                  </td>
+                  <td class="p-0">
+                    <input type="number" id="john-a3-grade" class="form-control text-center"
+                           value="71"/>
+                  </td>
+                  <td class="p-0">
+                    <input type="number" id="john-a4-grade" class="form-control text-center"
+                           value="84"/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>George Harrison</td>
+                  <td class="p-0">
+                    <input type="number" id="george-a1-grade" class="form-control text-center"
+                           value="76"/>
+                  </td>
+                  <td class="p-0">
+                    <input type="number" id="george-a2-grade" class="form-control text-center"
+                           value="81"/>
+                  </td>
+                  <td class="p-0">
+                    <input type="number" id="george-a3-grade" class="form-control text-center"
+                           value="71"/>
+                  </td>
+                  <td class="p-0">
+                    <input type="number" id="george-a4-grade" class="form-control text-center"
+                           value="84"/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Ringo Starr</td>
+                  <td class="p-0">
+                    <input type="number" id="ringo-a1-grade" class="form-control text-center"
+                           value="76"/>
+                  </td>
+                  <td class="p-0">
+                    <input type="number" id="ringo-a2-grade" class="form-control text-center"
+                           value="81"/>
+                  </td>
+                  <td class="p-0">
+                    <input type="number" id="ringo-a3-grade" class="form-control text-center"
+                           value="71"/>
+                  </td>
+                  <td class="p-0">
+                    <input type="number" id="ringo-a4-grade" class="form-control text-center"
+                           value="84"/>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
@@ -152,102 +297,3 @@
   </div>
 </div>
 </body>
-
-<!--
-<table width="100%">
-    <tbody>
-    <tr valign="top">
-        <td>
-            <ul>
-                <li><a href="/Kanbas/Account/Profile/profile.html">Account</a></li>
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="/Kanbas/Courses/Home/home.html">Courses</a></li>
-                <li><a href="#">Calendar</a></li>
-                <li><a href="#">Inbox</a></li>
-                <li><a href="#">History</a></li>
-                <li><a href="#">Studio</a></li>
-                <li><a href="#">Commons</a></li>
-                <li><a href="#">Help</a></li>
-            </ul>
-        </td>
-        <td>
-            <ul>
-                <li><a href="/Kanbas/Courses/Home/home.html">Home</a></li>
-                <li><a href="#">Modules</a></li>
-                <li><a href="#">Piazza</a></li>
-                <li><a href="#">Zoom Meetings</a></li>
-                <li><a href="/Kanbas/Courses/Assignments/assignments.html">Assignments</a></li>
-                <li><a href="#">Quizzes</a></li>
-                <li><a href="/Kanbas/Courses/Grades/grade.html">Grades</a></li>
-                <li><a href="#">People</a></li>
-                <li><a href="#">Panopto Video</a></li>
-                <li><a href="#">Discussions</a></li>
-                <li><a href="#">Announcements</a></li>
-                <li><a href="#">Pages</a></li>
-                <li><a href="#">Files</a></li>
-                <li><a href="#">Rubrics</a></li>
-                <li><a href="#">Outcomes</a></li>
-                <li><a href="#">Collaborations</a></li>
-                <li><a href="#">Syllabus</a></li>
-                <li><a href="/Kanbas/Courses/Settings/settings.html">Settings</a></li>
-            </ul>
-        </td>
-        <td>
-            <select id="grade-book-selector">
-                <option value="GRADEBOOK">Gradebook</option>
-            </select>
-            <button type="button">Import</button>
-            <select id="export-selector">
-                <option value="EXPORT">Export</option>
-            </select>
-            <button type="button">Configure</button>
-            <h3>Student Names</h3>
-            <input placeholder="Search students" type="text" id="student-names"/>
-            <h3>Assignment Names</h3>
-            <input placeholder="Search assignments" type="text" id="assignment-names"/><br/><br/>
-            <button type="button">Apply Filters</button><br/><br/>
-            <table border="1" width="100%">
-                <thead>
-                <tr>
-                    <th>Student Name</th>
-                    <th>REACT OUT OF 100</th>
-                    <th>BOOTSTRAP OUT OF 100</th>
-                    <th>REDUX OUT OF 100</th>
-                    <th>MONGO OUT OF 100</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>Paul McCartney</td>
-                    <td>98</td>
-                    <td>76</td>
-                    <td>87</td>
-                    <td><input  type="number" id="paul-react-grade" value="84"/></td>
-                </tr>
-                <tr>
-                    <td>John Lennon</td>
-                    <td>85</td>
-                    <td>90</td>
-                    <td><input  type="number" id="john-mongo-grade" value="79"/></td>
-                    <td>83</td>
-                </tr>
-                <tr>
-                    <td>George Harrison</td>
-                    <td>78</td>
-                    <td><input  type="number" id="george-boot-grade" value="79"/></td>
-                    <td>85</td>
-                    <td>93</td>
-                </tr>
-                <tr>
-                    <td>Ringo Starr</td>
-                    <td><input  type="number" id="ringo-react-grade" value="79"/></td>
-                    <td>96</td>
-                    <td>77</td>
-                    <td>82</td>
-                </tr>
-                </tbody>
-            </table>
-        </td>
-    </tr>
-    </tbody>
-</table>-->
