@@ -169,3 +169,8 @@ a {
   color: black;
   font-weight: bold;
 }
+
+.wd-collapsed-kanbas-navigation .list-group-item {
+  border: none;
+  padding: 10px 0 10px 0;
+}

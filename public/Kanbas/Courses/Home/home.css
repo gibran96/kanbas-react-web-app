@@ -16,6 +16,11 @@
   padding: 10px 0 10px 0;
 }
 
+.wd-collapsed-kanbas-navigation .list-group-item {
+  border: none;
+  padding: 10px 0 10px 0;
+}
+
 .wd-kanbas-navigation .list-group-item.active {
   color: #b52828;
   background-color: white;

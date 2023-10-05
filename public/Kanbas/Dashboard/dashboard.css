@@ -165,3 +165,8 @@
 .wd-card-subheading-small-font {
   font-size: 12px;
 }
+
+.wd-collapsed-kanbas-navigation .list-group-item {
+  border: none;
+  padding: 10px 0 10px 0;
+}

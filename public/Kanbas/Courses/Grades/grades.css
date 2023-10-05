@@ -178,3 +178,8 @@ td input.form-control {
   background-color: rgba(0,0,0,0);
   border: none;
 }
+
+.wd-collapsed-kanbas-navigation .list-group-item {
+  border: none;
+  padding: 10px 0 10px 0;
+}
