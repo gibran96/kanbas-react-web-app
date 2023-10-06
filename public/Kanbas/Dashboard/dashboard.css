@@ -1,0 +1,172 @@
+.container {
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.wd-kanbas-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.wd-main-content {
+  position: relative;
+  left: 80px;
+}
+
+.wd-kanbas-navigation.list-group {
+  border-radius: 0;
+  font-family: "Lato Extended", "Lato", "Helvetica", serif;
+  font-size: 14px;
+}
+
+.wd-kanbas-navigation .list-group-item {
+  color: white;
+  background-color: black;
+  border: none;
+  padding: 10px 0 10px 0;
+}
+
+.wd-kanbas-navigation .list-group-item.active {
+  color: #b52828;
+  background-color: white;
+}
+
+.wd-color-red {
+  color: #b52828;
+}
+
+.wd-bg-color-black {
+  background-color: black;
+}
+
+.wd-align-centre {
+  text-align: center;
+}
+
+.wd-account-navigation.list-group {
+  border-radius: 0;
+}
+
+.wd-account-navigation .list-group-item {
+  border: none;
+  color: #b52828;
+  padding-left: 8px;
+}
+
+.wd-account-navigation .list-group-item.active {
+  color: black;
+  border-left: 2px solid black;
+  background-color: white;
+}
+
+.wd-account-navigation .list-group-item:hover {
+  background-color: white;
+  text-decoration: underline;
+}
+
+.wd-account-navigation .list-group-item:focus {
+  background-color: white;
+}
+
+.wd-nu-logo {
+  width: 70px;
+  height: 70px;
+}
+
+.wd-col-min {
+  min-height: 100%;
+  max-width: 85px;
+}
+
+.wd-horiz-line {
+  border-bottom: 1px solid #c7cdd1;
+}
+
+.wd-row-width {
+  height: 70px;
+}
+
+.wd-profile-font {
+  font-size: 18px;
+  font-family: "Lato Extended", "Lato", "Helvetica", serif;
+  color: #2D3B45;
+}
+
+.wd-name-font {
+  font-family: "Lato Extended", "Lato", "Helvetica", serif;
+  color: #2D3B45;
+}
+
+.wd-text-decoration {
+  text-decoration: none;
+}
+
+.wd-edit-btn {
+  border-radius: 3px;
+  background: #f5f5f5;
+  color: #2D3B45;
+  border: 1px solid #c7cdd1;
+  padding: 6px 6px 6px 6px;
+}
+
+.wd-color-white {
+  color: white;
+}
+
+.wd-color-black {
+  color: black;
+}
+
+.wd-dashboard-heading {
+  font-size: 38px;
+  font-family: "Lato Extended", "Lato", "Helvetica", serif;
+  color: #2D3B45;
+}
+
+.wd-card-style {
+  width: 260px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .3)
+}
+
+.wd-card-height {
+  height: 146px;
+  padding: 20px;
+  border-radius: 5px 5px 0 0;
+}
+
+.wd-bg-color-green {
+  background: darkgreen;
+}
+
+.wd-color-green {
+  color: darkgreen;
+}
+
+.wd-card-heading {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.wd-card-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wd-card-subheading-color {
+  color: #677179;
+}
+
+.wd-card-subheading-font {
+  font-size: 16px;
+}
+
+.wd-card-subheading-small-font {
+  font-size: 12px;
+}
+
+.wd-collapsed-kanbas-navigation .list-group-item {
+  border: none;
+  padding: 10px 0 10px 0;
+}

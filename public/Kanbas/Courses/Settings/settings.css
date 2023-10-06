@@ -1,0 +1,18 @@
+a.nav-link {
+  color: #b52828;
+  text-decoration: none;
+}
+
+.wd-contents {
+  display: contents;
+}
+
+.wd-settings-subtext {
+  color: #677179;
+  font-size: 14px;
+}
+
+.wd-collapsed-kanbas-navigation .list-group-item {
+  border: none;
+  padding: 10px 0 10px 0;
+}

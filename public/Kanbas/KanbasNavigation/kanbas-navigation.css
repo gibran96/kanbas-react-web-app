@@ -1,0 +1,33 @@
+.container {
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.wd-kanbas-navigation.list-group {
+  border-radius: 0;
+  font-family: "Lato Extended","Lato","Helvetica", serif;
+  font-size: 14px;
+}
+
+.wd-kanbas-navigation .list-group-item {
+  color: black;
+  border: none;
+  padding: 10px 0 10px 0;
+}
+
+.wd-kanbas-navigation .list-group-item.active {
+  color: #b52828;
+  background-color: white;
+}
+
+.wd-color-red {
+  color: #b52828;
+}
+
+.wd-bg-color-black {
+  background-color: black;
+}
+
+.wd-align-centre {
+  text-align: center;
+}
