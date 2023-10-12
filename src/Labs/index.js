@@ -11,7 +11,7 @@ function Labs() {
           <div className="col-8">
             <h1>Labs</h1>
           </div>
-          <div className="col-4 align-self-center">
+          <div className="col-4 align-self-center position-fixed end-0 pe-5">
             <div className="float-end">
               <Link to="/" className="btn btn-secondary">Back</Link>
             </div>
