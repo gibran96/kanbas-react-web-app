@@ -1,0 +1,55 @@
+.wd-kanbas-navigation {
+  position: fixed;
+  width: 85px;
+  min-height: 100%;
+}
+
+.wd-kanbas-navigation.list-group {
+  border-radius: 0;
+  font-family: "Lato Extended","Lato","Helvetica", serif;
+  font-size: 14px;
+}
+
+.wd-kanbas-navigation .list-group-item {
+  color: #b52828;
+  border: none;
+  padding: 10px 0 10px 0;
+}
+
+.wd-kanbas-navigation .list-group-item.active {
+  color: #b52828;
+  background-color: white;
+  .wd-menu-text {
+    color: #b52828;
+  }
+}
+
+.wd-menu-text {
+  color: white;
+}
+
+.wd-color-red {
+  color: #b52828;
+}
+
+.wd-bg-color-black {
+  background-color: black;
+}
+
+.wd-align-centre {
+  text-align: center;
+}
+
+.wd-kanbas-navigation .wd-icon {
+  font-size: 2em;
+}
+
+.wd-nu-logo {
+  width: 70px;
+  height: 70px;
+}
+
+.list-group-item:last-child {
+  flex-direction: column;
+  flex-grow: 1;
+}
