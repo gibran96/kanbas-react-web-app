@@ -53,3 +53,8 @@
   flex-direction: column;
   flex-grow: 1;
 }
+
+.wd-collapsed-kanbas-navigation .list-group-item {
+  border: none;
+  padding: 10px 0 10px 0;
+}

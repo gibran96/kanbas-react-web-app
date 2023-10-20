@@ -5,6 +5,7 @@ import {Route, Routes} from "react-router-dom";
 import Landing from "./Landing";
 
 function App() {
+  /*library.add(fab, Kanbas)*/
   return (
       <div className="container px-0 mx-0">
           <Routes>

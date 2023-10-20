@@ -4,6 +4,7 @@ import Account from "./Account";
 import Dashboard from "./Dashboard";
 import Courses from "./Courses";
 import "./index.css";
+import KanbasMobileNavigation from "./KanbasNavigation/KanbasMobileNavigation";
 
 function Kanbas() {
   return (
@@ -11,7 +12,10 @@ function Kanbas() {
         <div className={'col-md-1 d-none d-md-block px-0'}>
           <KanbasNavigation/>
         </div>
-        <div className={'col-12 col-md-11'}>
+        <div className="col-12 d-md-none px-0">
+          <KanbasMobileNavigation/>
+        </div>
+        <div className={'col-12 col-md-11 py-3'}>
           <Routes>
             <Route path="/" element={<Navigate to="Dashboard"/>}/>
             <Route path="Account" element={<Account/>}/>
