@@ -18,7 +18,6 @@ import CourseNavigation from "./CourseNavigation";
 function Courses() {
   const {courseId} = useParams();
   const url = useLocation();
-  console.log(url);
   const course = db.courses.find((course) => course._id === courseId);
   return (
       <>

@@ -11,6 +11,16 @@ function CourseHeader({course: course}) {
     "Grades"
   ]
   const assignmentList = [
+    "A101",
+    "A102",
+    "A103",
+    "A201",
+    "A202",
+    "A203",
+    "A301",
+    "A302",
+    "A303",
+
     "A401",
     "A402",
     "A403",

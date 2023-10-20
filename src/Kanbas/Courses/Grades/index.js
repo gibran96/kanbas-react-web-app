@@ -53,12 +53,12 @@ function Grades() {
             return (
                 <tr>
                   <td className="text-center">{user.firstName} {user.lastName}</td>
-                  {assignments.map((assignment) => {
+                  {assignments.map((assignment, index) => {
                     const grade = db.grades.find(
                         (grade) => grade.student === enrollment.user
                             && grade.assignment === assignment._id);
                     return (
-                        <td className="text-center">{grade?.grade || ""}</td>);
+                        <td key={index} className="text-center">{grade?.grade || ""}</td>);
                   })}
                 </tr>);
           })}

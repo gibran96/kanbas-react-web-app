@@ -15,8 +15,7 @@ function Assignments() {
   const {courseId} = useParams();
   assignments = assignments.filter(
       (assignment) => assignment.course === courseId);
-  console.log(courseId);
-  console.log(assignments);
+
   return (
       <>
         <div className="row pe-5">

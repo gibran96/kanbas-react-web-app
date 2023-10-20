@@ -15,7 +15,7 @@ function AssignmentEditor() {
   return (
       <div className="row pe-5">
         <h4>Assignment Name</h4>
-        <input value={assignment.title}
+        <input value={assignment.title} readOnly={true}
                className="form-control mb-2"/>
         <div className="col pe-0">
           <div className="float-end">

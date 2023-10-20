@@ -56,7 +56,7 @@ function KanbasMobileNavigation() {
   };
   const {pathname} = useLocation();
   let {courseId} = useParams();
-  console.log("courseId", courseId)
+
   let title = "";
   let subTitle = "";
   if (pathname.includes("Dashboard")) {
@@ -64,7 +64,7 @@ function KanbasMobileNavigation() {
   } else if (pathname.includes("Courses")) {
     title = courseId;
     if (pathname.includes("Home")) {
-    subTitle = "Home";
+      subTitle = "Home";
     } else if (pathname.includes("Modules")) {
       subTitle = "Modules";
     } else if (pathname.includes("Assignments")) {
@@ -89,13 +89,14 @@ function KanbasMobileNavigation() {
             </div>
 
             <div className="float-end">
-              {pathname.includes("Courses") && (
+
+              {/*{pathname.includes("Courses") && (
               <a data-bs-toggle="collapse" role="button"
                  onClick={() => setOpenCourse(!openCourse)}
                  aria-expanded={openCourse} aria-controls="course-menu">
                 <AiOutlineMenu className="wd-color-white"/>
               </a>
-              )}
+              )}*/}
             </div>
           </div>
         </nav>

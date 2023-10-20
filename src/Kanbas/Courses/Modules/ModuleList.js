@@ -14,8 +14,7 @@ function ModuleList() {
   const {courseId} = useParams();
   const modules = db.modules;
   const weeks = modules.filter((module) => module.course === courseId)[0].weeks;
-  console.log(modules);
-  console.log(weeks);
+
   return (
       <>
         {weeks.map(
