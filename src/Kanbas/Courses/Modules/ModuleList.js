@@ -13,8 +13,17 @@ import {GoLinkExternal} from "react-icons/go";
 function ModuleList() {
   const {courseId} = useParams();
   const modules = db.modules;
-  const weeks = modules.filter((module) => module.course === courseId)[0].weeks;
-
+  const module = modules.filter((module) => module.course === courseId)[0];
+  if (module === undefined) {
+    return (
+        <div className="row">
+          <div className="col">
+            <h1>No modules found</h1>
+          </div>
+        </div>
+    );
+  }
+  const weeks = module.weeks;
   return (
       <>
         {weeks.map(
@@ -51,7 +60,8 @@ function ModuleList() {
                               && "ms-4"} ${heading.name !== "SLIDES"
                               && "ps-5"}`}>{title}</span>
                               {heading.name === "SLIDES" &&
-                                  <GoLinkExternal className="ms-2 wd-color-red"/>
+                                  <GoLinkExternal
+                                      className="ms-2 wd-color-red"/>
                               }
                               <div className="float-end">
                                 <BsFillCheckCircleFill
