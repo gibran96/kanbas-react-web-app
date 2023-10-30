@@ -11,14 +11,17 @@ import ObjectStateVariable from "./ObjectStateVariables";
 import ArrayStateVariable from "./ArrayStateVariable";
 import ParentStateComponent from "./ParentStateComponent";
 import ReduxExamples from "./ReduxExamples";
+import ModuleList from "./DynamicForm";
 
 function Assignment4() {
   function SayHello() {
     alert("Hello World!");
   }
+
   return (
       <div>
         <h1>Assignment 4</h1>
+        <ModuleList/>
         <Add a={1} b={2}/>
         <ClickEvent/>
         <PassingDataOnEvent/>
