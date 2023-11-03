@@ -13,12 +13,11 @@ import Assignments from "./Assignments";
 import Grades from "./Grades";
 import AssignmentEditor from "./Assignments/AssignmentEditor";
 import CourseNavigation from "./CourseNavigation";
+import AddAssignment from "./Assignments/AddAssignment";
 
 function Courses({courses}) {
   const {courseId} = useParams();
   const url = useLocation();
-  console.log(courses);
-  console.log(courseId);
   const course = courses.find((course) => course._id === courseId);
   return (
       <>
@@ -43,6 +42,7 @@ function Courses({courses}) {
                   element={<AssignmentEditor/>}
               />
               <Route path="Grades" element={<Grades/>}/>
+              <Route path="AddAssignment" element={<AddAssignment/>}/>
             </Routes>
           </div>
         </div>

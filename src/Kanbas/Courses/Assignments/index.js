@@ -1,20 +1,34 @@
-import db from "../../Database";
-import {AiOutlinePlus} from "react-icons/ai";
+import {AiFillDelete, AiOutlinePlus} from "react-icons/ai";
 import {
   BsCheckCircle,
   BsFillFileTextFill,
   BsThreeDotsVertical
 } from "react-icons/bs";
 import "./index.css"
-import {Link, useParams} from "react-router-dom";
+import {Link, useNavigate, useParams} from "react-router-dom";
 import {RxDragHandleDots2} from "react-icons/rx";
 import React from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {deleteAssignment} from "./assignmentsReducer";
 
 function Assignments() {
-  let assignments = db.assignments;
   const {courseId} = useParams();
+  const dispatch = useDispatch();
+  let assignments = useSelector(
+      state => state.assignmentsReducer.assignments);
   assignments = assignments.filter(
       (assignment) => assignment.course === courseId);
+  const navigate = useNavigate();
+
+  const navigateToAdd = () => {
+    navigate(`/Kanbas/Courses/${courseId}/AddAssignment`);
+  }
+
+  const deleteAss = (assignmentId) => {
+    if (window.confirm('Are you sure you want to delete this assignment?')) {
+      dispatch(deleteAssignment(assignmentId));
+    }
+  }
 
   return (
       <>
@@ -27,7 +41,8 @@ function Assignments() {
             <div className="float-end">
               <button className="btn btn-light rounded-1 me-2"><AiOutlinePlus/>Group
               </button>
-              <button className="btn btn-danger rounded-1 me-2">
+              <button className="btn btn-danger rounded-1 me-2"
+                      onClick={navigateToAdd}>
                 <AiOutlinePlus/> Assignment
               </button>
               <button className="btn btn-light rounded-1 h-100">
@@ -36,11 +51,20 @@ function Assignments() {
             </div>
           </div>
           <div className="wd-horiz-line mt-3"></div>
-          <ul className={"list-group rounded-1 mt-4"}>
+          {(!assignments || assignments.length === 0) &&
+              <div className="row">
+                <div className="col">
+                  <h1>No assignments found</h1>
+                </div>
+              </div>
+          }
+          {assignments && assignments.length > 0 && <ul
+              className={"list-group rounded-1 mt-4"}>
             <li className={"list-group-item list-group-item-secondary"}>
               Assignments
               <div className="float-end">
-                <span className="border border-1 border-dark rounded-pill p-1 me-2">40% of total</span>
+                <span
+                    className="border border-1 border-dark rounded-pill p-1 me-2">40% of total</span>
                 <AiOutlinePlus className="me-2"/>
                 <BsThreeDotsVertical/>
               </div>
@@ -59,19 +83,32 @@ function Assignments() {
                           to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}>
                         {assignment.title}
                       </Link>
-                      <p className="wd-todo-subtext mb-0">{assignment.description}</p>
-                      <p className="wd-todo-subtext mb-0">{assignment.due}</p>
+                      {assignment.description && <p
+                          className="wd-todo-subtext mb-0">{assignment.description}</p>}
+                      {assignment.points && <span
+                          className="wd-todo-subtext mb-0">Points: {assignment.points} |</span>}
+                      {assignment.due && <span
+                          className="wd-todo-subtext mb-0 ms-1">Due: {assignment.due} |</span>}
+                      {assignment.availableFrom && <span
+                          className="wd-todo-subtext mb-0 ms-1">Available from: {assignment.availableFrom} |</span>}
+                      {assignment.availableTo && <span
+                          className="wd-todo-subtext mb-0 ms-1">Available to: {assignment.availableTo}</span>}
                     </div>
                     <div className="col-2 align-self-center">
                       <div className="float-end">
-                        <BsCheckCircle className="wd-color-green align-self-center mx-3"/>
+                        <AiFillDelete
+                            className={'wd-color-red wd-cursor-pointer'}
+                            onClick={() => deleteAss(
+                                assignment._id)}/>
+                        <BsCheckCircle
+                            className="wd-color-green align-self-center mx-3"/>
                         <BsThreeDotsVertical/>
                       </div>
                     </div>
                   </div>
                 </li>
             ))}
-          </ul>
+          </ul>}
         </div>
       </>
   );
