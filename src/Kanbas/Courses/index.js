@@ -5,7 +5,6 @@ import {
   useLocation,
   useParams
 } from "react-router-dom";
-import db from "../Database";
 import "./index.css";
 import CourseHeader from "./CourseHeader";
 import Home from "./Home";
@@ -14,11 +13,12 @@ import Assignments from "./Assignments";
 import Grades from "./Grades";
 import AssignmentEditor from "./Assignments/AssignmentEditor";
 import CourseNavigation from "./CourseNavigation";
+import AddAssignment from "./Assignments/AddAssignment";
 
-function Courses() {
+function Courses({courses}) {
   const {courseId} = useParams();
   const url = useLocation();
-  const course = db.courses.find((course) => course._id === courseId);
+  const course = courses.find((course) => course._id === courseId);
   return (
       <>
         <CourseHeader course={course}/>
@@ -42,6 +42,7 @@ function Courses() {
                   element={<AssignmentEditor/>}
               />
               <Route path="Grades" element={<Grades/>}/>
+              <Route path="AddAssignment" element={<AddAssignment/>}/>
             </Routes>
           </div>
         </div>
