@@ -1,8 +1,7 @@
-import db from '../../Database';
 import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
-  modules: db.modules,
+  modules: [],
   formData: {
     sections: [
       {
@@ -40,6 +39,9 @@ const modulesSlice = createSlice({
   name: 'modules',
   initialState,
   reducers: {
+    /*setModulesFromDB(state, action) {
+      state.modules = action.payload;
+    },*/
     setFormData(state, action) {
       state.formData = action.payload;
     },
@@ -206,7 +208,59 @@ const modulesSlice = createSlice({
           return section;
         })
       }
-    }
+    },
+    addNewWeek(state, action) {
+      console.log(action);
+      state.modules = state.modules.map((module) => {
+        if (module.course === action.payload.courseId) {
+          return {
+            ...module,
+            weeks: [
+              ...module.weeks,
+              action.payload.week,
+            ]
+          }
+        }
+        return module;
+      });
+    },
+    addModule(state, action) {
+      state.modules = [
+        ...state.modules,
+        action.payload,
+      ]
+    },
+    deleteModule(state, action) {
+      state.modules = state.modules.map((module) => {
+        if (module._id === action.payload.moduleId) {
+          return {
+            ...module,
+            weeks: [
+              ...module.weeks.slice(0, action.payload.index),
+              ...module.weeks.slice(action.payload.index + 1),
+            ]
+          }
+        }
+        return module;
+      });
+      console.log(state.modules);
+    },
+    updateModuleState(state, action) {
+      state.modules = state.modules.map((module) => {
+        if (module._id === action.payload.moduleId) {
+          return {
+            ...module,
+            weeks: [
+              ...module.weeks.slice(0, action.payload.index),
+              action.payload.week,
+              ...module.weeks.slice(action.payload.index + 1),
+            ]
+          }
+        }
+        return module;
+      });
+      console.log(state.modules);
+    },
   }
 });
 
@@ -221,6 +275,10 @@ export const {
   addNewObjectiveField,
   addNewHeadingField,
   deleteHeadingField,
-    deleteObjectiveField
+  deleteObjectiveField,
+  addNewWeek,
+  deleteModule,
+  addModule,
+  updateModuleState,
 } = modulesSlice.actions;
 export default modulesSlice.reducer;

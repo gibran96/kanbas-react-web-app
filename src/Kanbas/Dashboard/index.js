@@ -21,23 +21,29 @@ function Dashboard({
         </div>
         <h2>Published Courses ({courses.length})</h2>
         <input value={course.name} className="form-control w-25"
+               placeholder={'Course Name'}
                onChange={(e) => setCourse(
                    {...course, name: e.target.value})}/>
         <input value={course._id} className="form-control w-25 mt-2"
+                placeholder={'Course ID'}
                onChange={(e) => setCourse(
                    {...course, _id: e.target.value})}/>
         <input value={course.number} className="form-control w-25 mt-2"
+                placeholder={'Course Number'}
                onChange={(e) => setCourse(
                    {...course, number: e.target.value})}/>
         <input value={course.startDate} className="form-control w-25 mt-2"
                type="date"
+               title={'Start Date'}
                onChange={(e) => setCourse(
                    {...course, startDate: e.target.value})}/>
         <input value={course.endDate} className="form-control w-25 mt-2"
                type="date"
+                title={'End Date'}
                onChange={(e) => setCourse(
                    {...course, endDate: e.target.value})}/>
         <input value={course.term} className="form-control w-25 mt-2"
+                placeholder={'Term'}
                onChange={(e) => setCourse(
                    {...course, term: e.target.value})}/>
         <button className="btn btn-success me-3 mt-2" onClick={addNewCourse}>Add

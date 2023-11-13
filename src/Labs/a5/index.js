@@ -1,8 +1,21 @@
+import EncodingParametersInUrls from "./EncodingParametersInUrls";
+import WorkingWithObjects from "./WorkingWithObjects";
+import WorkingWithArrays from "./WorkingWithArrays";
+
 function Assignment5() {
   return (
-    <div>
-      <h1>Assignment 5 - Coming soon</h1>
-    </div>
+      <div>
+        <h1>Assignment 5</h1>
+        <div className="list-group">
+          <a href="http://localhost:4000/a5/welcome"
+             className="list-group-item">
+            Welcome
+          </a>
+        </div>
+        <EncodingParametersInUrls/>
+        <WorkingWithObjects/>
+        <WorkingWithArrays/>
+      </div>
   );
 }
 
