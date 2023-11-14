@@ -16,7 +16,7 @@ function Kanbas() {
   const COURSES_URL = `${API_BASE}/courses`;
   console.log(COURSES_URL);
   const [course, setCourse] = useState({
-    objId: courses.length + 1,
+    objId: "",
     _id: "Enter course ID",
     name: "New Course",
     number: "New Number",
@@ -25,13 +25,15 @@ function Kanbas() {
     term: "202410_2 Fall 2023 Semester Full Term"
   });
   const resetCourse = () => {
+    console.log(courses);
     setCourse({
-      _id: "",
-      name: "",
-      number: "",
-      startDate: "",
-      endDate: "",
-      term: ""
+      objId: "",
+      _id: "Enter course ID",
+      name: "New Course",
+      number: "New Number",
+      startDate: "2023-09-10",
+      endDate: "2023-12-15",
+      term: "202410_2 Fall 2023 Semester Full Term"
     });
   }
   const findAllCourses = async () => {
@@ -39,7 +41,10 @@ function Kanbas() {
     setCourses(response.data);
   }
   const addNewCourse = async () => {
-    const response = await axios.post(COURSES_URL, course);
+    const response = await axios.post(COURSES_URL, {
+      ...course,
+      objId: courses.length + 1
+    });
     setCourses([
       ...courses,
       response.data
@@ -59,6 +64,7 @@ function Kanbas() {
   const updateCourse = async () => {
     if (window.confirm("Are you sure you want to update this course?")) {
       const response = await axios.put(`${COURSES_URL}/${course._id}`, course);
+      console.log(response);
       if (response.status === 204) {
         setCourses(courses.map((c) => c.objId === course.objId ? course : c));
       } else {
