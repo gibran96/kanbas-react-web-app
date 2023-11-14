@@ -28,6 +28,7 @@ import {
   updateModuleState
 } from "./modulesReducer";
 import {
+  addWeekToModule,
   createModule,
   deleteModuleFromDB,
   findModulesForCourse,
@@ -103,8 +104,7 @@ function ModuleList() {
 
   const handleSave = () => {
     if (module !== undefined) {
-      createModule(courseId, formData.sections[0]).then((addedWeek) => {
-        console.log(addedWeek);
+      addWeekToModule(courseId, formData.sections[0]).then((addedWeek) => {
         dispatch(addNewWeek({courseId: courseId, week: addedWeek}));
       });
     } else {

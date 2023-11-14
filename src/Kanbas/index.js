@@ -14,6 +14,7 @@ function Kanbas() {
   const [courses, setCourses] = useState([]);
   const API_BASE = process.env.REACT_APP_API_BASE;
   const COURSES_URL = `${API_BASE}/courses`;
+  console.log(COURSES_URL);
   const [course, setCourse] = useState({
     objId: courses.length + 1,
     _id: "Enter course ID",
@@ -39,7 +40,6 @@ function Kanbas() {
   }
   const addNewCourse = async () => {
     const response = await axios.post(COURSES_URL, course);
-    console.log(response.data);
     setCourses([
       ...courses,
       response.data

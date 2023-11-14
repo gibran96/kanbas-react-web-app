@@ -210,7 +210,6 @@ const modulesSlice = createSlice({
       }
     },
     addNewWeek(state, action) {
-      console.log(action);
       state.modules = state.modules.map((module) => {
         if (module.course === action.payload.courseId) {
           return {
@@ -243,7 +242,6 @@ const modulesSlice = createSlice({
         }
         return module;
       });
-      console.log(state.modules);
     },
     updateModuleState(state, action) {
       state.modules = state.modules.map((module) => {
@@ -259,7 +257,6 @@ const modulesSlice = createSlice({
         }
         return module;
       });
-      console.log(state.modules);
     },
   }
 });

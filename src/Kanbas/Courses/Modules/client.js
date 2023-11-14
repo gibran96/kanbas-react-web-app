@@ -16,14 +16,13 @@ export const createModule = async (courseId, newModule) => {
 }
 
 export const addWeekToModule = async (courseId, newWeek) => {
-  const response = await axios.post(`${MODULES_URL}/${courseId}/weeks`,
+  const response = await axios.post(`${COURSES_URL}/${courseId}/modules/weeks`,
       newWeek);
   return response.data;
 }
 
 export const deleteModuleFromDB = async (moduleId, index) => {
   const response = await axios.delete(`${MODULES_URL}/${moduleId}/${index}`);
-  console.log(response.data);
   return response.data;
 }
 
