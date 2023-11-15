@@ -13,11 +13,7 @@ import {
   setNewAssignmentId,
   setPoints
 } from "./assignmentsReducer";
-import {
-  addAssignmentToDB,
-  getAssignmentById,
-  updateAssignmentToDB
-} from "./client";
+import {addAssignmentToDB, updateAssignmentToDB} from "./client";
 import {useEffect, useState} from "react";
 
 function AddEditAssignment() {
@@ -39,9 +35,8 @@ function AddEditAssignment() {
   const checkNewAssignment = () => {
     if (assignmentId) {
       setIsEdit(true);
-      getAssignmentById(courseId, assignmentId).then((resp) => {
-        dispatch(setNewAssignment(resp));
-      });
+      dispatch(setNewAssignment(assignments.find(
+          (a) => a._id === assignmentId && a.course === courseId)));
     } else {
       dispatch(setNewAssignmentId("A" + (assignments.length + 1)));
       dispatch(setNewAssignmentCourse(courseId));
@@ -88,8 +83,8 @@ function AddEditAssignment() {
       if (resp.status === 204) {
         dispatch(resetNewAssignment());
       }
+      navigate(`/Kanbas/Courses/${courseId}/Assignments`);
     });
-    navigate(`/Kanbas/Courses/${courseId}/Assignments`);
   }
 
   const cancel = () => {
