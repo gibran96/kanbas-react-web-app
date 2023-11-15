@@ -14,7 +14,6 @@ function Kanbas() {
   const [courses, setCourses] = useState([]);
   const API_BASE = process.env.REACT_APP_API_BASE;
   const COURSES_URL = `${API_BASE}/courses`;
-  console.log(COURSES_URL);
   const [course, setCourse] = useState({
     objId: "",
     _id: "Enter course ID",
@@ -25,7 +24,6 @@ function Kanbas() {
     term: "202410_2 Fall 2023 Semester Full Term"
   });
   const resetCourse = () => {
-    console.log(courses);
     setCourse({
       objId: "",
       _id: "Enter course ID",
@@ -64,7 +62,6 @@ function Kanbas() {
   const updateCourse = async () => {
     if (window.confirm("Are you sure you want to update this course?")) {
       const response = await axios.put(`${COURSES_URL}/${course._id}`, course);
-      console.log(response);
       if (response.status === 204) {
         setCourses(courses.map((c) => c.objId === course.objId ? course : c));
       } else {
