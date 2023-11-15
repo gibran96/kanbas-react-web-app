@@ -31,7 +31,6 @@ function Assignments() {
         dispatch(
             deleteAssignment({courseId: courseId, assignmentId: assignmentId}));
       });
-      dispatch(deleteAssignment(assignmentId));
     }
   }
 
@@ -39,7 +38,7 @@ function Assignments() {
     getAssignments(courseId).then((assignments) => {
       dispatch(setAssignments(assignments));
     });
-  }, [courseId]);
+  }, []);
 
   return (
       <>

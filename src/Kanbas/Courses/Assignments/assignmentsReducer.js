@@ -11,16 +11,6 @@ const initialState = {
     due: '',
     availableFrom: '',
     availableTo: '',
-  },
-  updatedAssignment: {
-    _id: '',
-    course: '',
-    title: '',
-    description: '',
-    points: '',
-    due: '',
-    availableFrom: '',
-    availableTo: '',
   }
 }
 
@@ -85,7 +75,6 @@ export const {
   setAssignments,
   setNewAssignment,
   addAssignment,
-  updateAssignment,
   deleteAssignment,
   setAssignmentName,
   setAssignmentDescription,
