@@ -7,9 +7,10 @@ import {
 import "./index.css"
 import {Link, useNavigate, useParams} from "react-router-dom";
 import {RxDragHandleDots2} from "react-icons/rx";
-import React from "react";
+import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {deleteAssignment} from "./assignmentsReducer";
+import {deleteAssignment, setAssignments} from "./assignmentsReducer";
+import {deleteAssignmentFromDB, getAssignments} from "./client";
 
 function Assignments() {
   const {courseId} = useParams();
@@ -26,9 +27,18 @@ function Assignments() {
 
   const deleteAss = (assignmentId) => {
     if (window.confirm('Are you sure you want to delete this assignment?')) {
-      dispatch(deleteAssignment(assignmentId));
+      deleteAssignmentFromDB(courseId, assignmentId).then(() => {
+        dispatch(
+            deleteAssignment({courseId: courseId, assignmentId: assignmentId}));
+      });
     }
   }
+
+  useEffect(() => {
+    getAssignments(courseId).then((assignments) => {
+      dispatch(setAssignments(assignments));
+    });
+  }, []);
 
   return (
       <>
@@ -80,7 +90,7 @@ function Assignments() {
                     <div className="col-9 align-self-center">
                       <Link
                           key={assignment._id}
-                          to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}>
+                          to={`/Kanbas/Courses/${courseId}/EditAssignment/${assignment._id}`}>
                         {assignment.title}
                       </Link>
                       {assignment.description && <p

@@ -4,6 +4,7 @@ import {BsThreeDotsVertical} from "react-icons/bs";
 import {IoNewspaperOutline} from "react-icons/io5";
 import {AiFillEdit} from "react-icons/ai";
 import {MdDeleteForever} from "react-icons/md";
+import {useState} from "react";
 
 function Dashboard({
   courses,
@@ -13,6 +14,8 @@ function Dashboard({
   deleteCourse,
   updateCourse
 }) {
+  const [editIndex, setEditIndex] = useState(-1);
+  const [addToggle, setAddToggle] = useState(false);
   return (
       <>
         <div className={'d-none d-md-block'}>
@@ -20,31 +23,61 @@ function Dashboard({
           <hr/>
         </div>
         <h2>Published Courses ({courses.length})</h2>
-        <input value={course.name} className="form-control w-25"
-               onChange={(e) => setCourse(
-                   {...course, name: e.target.value})}/>
-        <input value={course._id} className="form-control w-25 mt-2"
-               onChange={(e) => setCourse(
-                   {...course, _id: e.target.value})}/>
-        <input value={course.number} className="form-control w-25 mt-2"
-               onChange={(e) => setCourse(
-                   {...course, number: e.target.value})}/>
-        <input value={course.startDate} className="form-control w-25 mt-2"
-               type="date"
-               onChange={(e) => setCourse(
-                   {...course, startDate: e.target.value})}/>
-        <input value={course.endDate} className="form-control w-25 mt-2"
-               type="date"
-               onChange={(e) => setCourse(
-                   {...course, endDate: e.target.value})}/>
-        <input value={course.term} className="form-control w-25 mt-2"
-               onChange={(e) => setCourse(
-                   {...course, term: e.target.value})}/>
-        <button className="btn btn-success me-3 mt-2" onClick={addNewCourse}>Add
+        <button className={'btn btn-success mb-3'}
+                onClick={() => setAddToggle(true)}>Add New
+          Course
         </button>
-        <button className="btn btn-primary mt-2" onClick={updateCourse}>Update
-        </button>
-
+        {addToggle && <>
+          <input value={course.name} className="form-control w-50"
+                 placeholder={'Course Name'}
+                 onChange={(e) => setCourse(
+                     {...course, name: e.target.value})}/>
+          <input value={course._id} className="form-control w-50 mt-2"
+                 placeholder={'Course ID'}
+                 onChange={(e) => setCourse(
+                     {...course, _id: e.target.value})}/>
+          <input value={course.number} className="form-control w-50 mt-2"
+                 placeholder={'Course Number'}
+                 onChange={(e) => setCourse(
+                     {...course, number: e.target.value})}/>
+          <input value={course.startDate} className="form-control w-50 mt-2"
+                 type="date"
+                 title={'Start Date'}
+                 onChange={(e) => setCourse(
+                     {...course, startDate: e.target.value})}/>
+          <input value={course.endDate} className="form-control w-50 mt-2"
+                 type="date"
+                 title={'End Date'}
+                 onChange={(e) => setCourse(
+                     {...course, endDate: e.target.value})}/>
+          <input value={course.term} className="form-control w-50 mt-2"
+                 placeholder={'Term'}
+                 onChange={(e) => setCourse(
+                     {...course, term: e.target.value})}/>
+          {editIndex === -1 && <button className="btn btn-success me-3 mt-2"
+                                       onClick={addNewCourse}>Add
+          </button>}
+          {editIndex !== -1 && <button className="btn btn-primary me-3 mt-2"
+                                       onClick={updateCourse}>Update
+          </button>}
+          <button className="btn btn-danger mt-2"
+                  onClick={() => {
+                    setAddToggle(false);
+                    if (editIndex !== -1) {
+                      setEditIndex(-1);
+                      setCourse({
+                        objId: "",
+                        _id: "Enter course ID",
+                        name: "New Course",
+                        number: "New Number",
+                        startDate: "2023-09-10",
+                        endDate: "2023-12-15",
+                        term: "202410_2 Fall 2023 Semester Full Term"
+                      });
+                    }
+                  }}>Cancel
+          </button>
+        </>}
         <div className="row row-cols-1 row-cols-md-3 g-4">
           {courses.map((course, index) => (
               <div className="col-12 col-sm-6 col-lg-4 col-xl-3 pt-4"
@@ -69,7 +102,9 @@ function Dashboard({
                     <AiFillEdit className={'wd-cursor-pointer mx-2'}
                                 onClick={(e) => {
                                   e.preventDefault();
-                                  setCourse(course)
+                                  setCourse(course);
+                                  setEditIndex(index);
+                                  setAddToggle(true);
                                 }}/>
                     <MdDeleteForever
                         className={'wd-cursor-pointer wd-color-red'}

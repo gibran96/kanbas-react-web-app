@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 import {RxDragHandleDots2} from "react-icons/rx";
 import {
@@ -12,18 +12,28 @@ import {AiFillDelete, AiOutlinePlus, AiTwotoneEdit} from "react-icons/ai";
 import {GoLinkExternal} from "react-icons/go";
 import {useDispatch, useSelector} from "react-redux";
 import {
+  addModule,
   addNewHeadingField,
   addNewObjectiveField,
+  addNewWeek,
   deleteHeadingField,
+  deleteModule,
   deleteObjectiveField,
   setFormData,
   setHeading,
   setIDs,
   setModules,
-  setNewModule,
   setObjective,
-  setTopic
+  setTopic,
+  updateModuleState
 } from "./modulesReducer";
+import {
+  addWeekToModule,
+  createModule,
+  deleteModuleFromDB,
+  findModulesForCourse,
+  updateModule
+} from "./client";
 
 function ModuleList() {
   const {courseId} = useParams();
@@ -31,6 +41,12 @@ function ModuleList() {
   const [addToggle, setAddToggle] = useState(false);
   const [editIndex, setEditIndex] = useState(-1);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    findModulesForCourse(courseId).then(modules => {
+      dispatch(setModules(modules));
+    });
+  }, [courseId]);
 
   const modules = useSelector((state) => state.modulesReducer.modules);
   const formData = useSelector((state) => state.modulesReducer.formData);
@@ -88,42 +104,41 @@ function ModuleList() {
 
   const handleSave = () => {
     if (module !== undefined) {
-      if (editIndex === -1) {
-        module = {
-          ...module,
-          weeks: [
-            ...module.weeks,
-            formData.sections[0],
-          ]
-        }
-      } else {
-        module = {
-          ...module,
-          weeks: module.weeks.map((week, index) => {
-            if (index === editIndex) {
-              return formData.sections[0];
-            }
-            return week;
-          })
-        }
-      }
-      dispatch(
-          setModules(modules.map((m) => m._id === module._id ? module : m)));
+      addWeekToModule(courseId, formData.sections[0]).then((addedWeek) => {
+        dispatch(addNewWeek({courseId: courseId, week: addedWeek}));
+      });
     } else {
       newModule = {
         ...newModule,
         weeks: formData.sections,
       }
-
-      dispatch(setNewModule(newModule));
-      dispatch(setModules([...modules, newModule]));
+      createModule(courseId, newModule).then((addedModule) => {
+        dispatch(addModule(addedModule));
+      });
     }
+    cancel();
+  };
 
+  const handleUpdate = () => {
+    const updatedWeek = formData.sections[0];
+    module = {
+      ...module,
+      weeks: module.weeks.map((week, index) => {
+        if (index === editIndex) {
+          return updatedWeek;
+        }
+        return week;
+      })
+    }
+    updateModule(module._id, editIndex, updatedWeek).then((newWeek) => {
+      dispatch(updateModuleState(
+          {moduleId: module._id, index: editIndex, week: newWeek}));
+    });
     if (editIndex !== -1) {
       setEditIndex(-1);
     }
     cancel();
-  };
+  }
 
   const cancel = () => {
     dispatch(
@@ -145,15 +160,9 @@ function ModuleList() {
 
   const deleteSection = (index) => {
     if (window.confirm("Are you sure you want to delete this module?")) {
-      module = {
-        ...module,
-        weeks: [
-          ...module.weeks.slice(0, index),
-          ...module.weeks.slice(index + 1),
-        ]
-      }
-      dispatch(
-          setModules(modules.map((m) => m._id === module._id ? module : m)));
+      deleteModuleFromDB(module._id, index).then((status) => {
+        dispatch(deleteModule({moduleId: module._id, index: index}));
+      });
     }
   }
 
@@ -231,7 +240,8 @@ function ModuleList() {
                                             headingIndex)}
                                     className={'form-control w-50 mb-2 d-inline-block me-2'}
                                     placeholder="Heading name"/>
-                                {headingIndex + 1 === section.headings.length &&
+                                {headingIndex + 1 === section.headings.length
+                                    &&
                                     <BsFillPlusSquareFill
                                         className={'me-2 wd-cursor-pointer'}
                                         onClick={() => addNewHeading(
@@ -279,9 +289,14 @@ function ModuleList() {
                     ))}
                 <div className={'row'}>
                   <div className={'col'}>
-                    <button className="btn btn-success rounded-1 mx-2"
-                            onClick={() => handleSave()}>Save
-                    </button>
+                    {editIndex === -1 && <button
+                        className="btn btn-success rounded-1 mx-2"
+                        onClick={() => handleSave()}>Save
+                    </button>}
+                    {editIndex !== -1 && <button
+                        className="btn btn-success rounded-1 mx-2"
+                        onClick={() => handleUpdate()}>Update
+                    </button>}
                     <button className="btn btn-danger rounded-1 mx-2"
                             onClick={() => cancel()}>Cancel
                     </button>
@@ -319,7 +334,8 @@ function ModuleList() {
                   </li>
                   {week.headings.map((heading, headingIndex) => (
                       <ul className="ps-0 border-top-0" key={headingIndex}>
-                        <li key={headingIndex} className="list-group-item px-2">
+                        <li key={headingIndex}
+                            className="list-group-item px-2">
                           <RxDragHandleDots2/>
                           <span className="ps-2">{heading.name}</span>
                           <div className="float-end">
@@ -329,10 +345,12 @@ function ModuleList() {
                           </div>
                         </li>
                         {heading.objectives.map((title, objIndex) => (
-                            <li className="list-group-item px-2" key={objIndex}>
+                            <li className="list-group-item px-2"
+                                key={objIndex}>
                               <RxDragHandleDots2/>
                               {heading.name === "SLIDES" &&
-                                  <BsLink45Deg className="wd-color-green ms-2"/>
+                                  <BsLink45Deg
+                                      className="wd-color-green ms-2"/>
                               }
                               <span className={`${heading.name === "SLIDES"
                               && "ms-4"} ${heading.name !== "SLIDES"
