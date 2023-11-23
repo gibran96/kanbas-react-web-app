@@ -4,6 +4,7 @@ import Kanbas from "./Kanbas";
 import {Route, Routes} from "react-router-dom";
 import Landing from "./Landing";
 import React from "react";
+import Project from "./Project";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Route path="/" element={<Landing/>}/>
           <Route path="/Labs/*" element={<Labs/>}/>
           <Route path="/Kanbas/*" element={<Kanbas/>}/>
+          <Route path="/Project/*" element={<Project/>}/>
         </Routes>
       </div>
   );

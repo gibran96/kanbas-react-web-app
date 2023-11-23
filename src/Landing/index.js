@@ -21,6 +21,11 @@ function landing() {
             <div className={'fw-bold'}>Kanbas</div>
             <div className={'fst-italic'}>The application being developed in the assignments.</div>
           </Link>
+          <Link to="/Project/"
+                className="list-group-item list-group-item-action">
+            <div className={'fw-bold'}>Project</div>
+            <div className={'fst-italic'}>Practicing functions of a website</div>
+          </Link>
         </div>
       </div>
   );
